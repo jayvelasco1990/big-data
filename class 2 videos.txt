@@ -2,3 +2,9 @@ https://www.youtube.com/watch?v=Wd3454UQ4kw&list=PLsSP8WLViIntLh7ex0kwp10QmtP69o
 http://www.cs.kau.se/cs/education/courses/dvgc04/06p1/slides/F12%20-%20DB%20Security.pdf
 https://conferences.oreilly.com/strata/stratany2013/public/schedule/detail/30455
 https://www.tutorialspoint.com/map_reduce/map_reduce_combiners.htm
+
+
+
+S. Vavilis, M. Petkovic, and N. Zannone, “A severity-based quantifica-tion of data leakages in database systems,”Journal of Computer Security,vol. 24, no. 3, pp. 321–345, 2016. 
+
+A Bayesian model for anomaly detection in SQL databases for security systems. Available from: https://www.researchgate.net/publication/311486420_A_Bayesian_model_for_anomaly_detection_in_SQL_databases_for_security_systems#pag:3:mrect:(285.91,52.16,10.58,8.91) [accessed Mar 9, 2017].

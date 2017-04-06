@@ -1,0 +1,87 @@
+who, when and where was proposed k-anonymity
+what is k-anonymity
+why is k-anonymity needed
+how does it work
+shortcomings and limitations
+
+
+Categories
+Privacy
+— L-Diversity
+— K-Anonymity
+- Distinguishing Factor
+
+Severity
+- M-Score
+- L-Severity
+
+Privacy is different from severity
+
+impact on lives vs impact on organization vs impact on x
+
+substitute dependency factor for k-anonymity
+
+determine if the leaked table satisfies k-anonymous 
+
+Categorizing the type of leakage - * another factor
+
+Frequency - * another factor
+
+per record vs dimensions [overall privacy, frequency, cause of leakage] - provide index for each type
+f(x) * []
+
+time of attack from detection
+
+obtaining severity index of sensitive attributes will vary
+
+Severity based on linkages
+
+
+Quasi identifiers should be quantified as well
+
+
+
+
+5 reasons why severity quantification is important
+
+1. Regulations - ENISA
+The European Union Agency for Network and Information Security (ENISA) handles security  throughout the european union (EU)
+Guidelines and procedures to protect against data breaches
+Prepare
+Detect
+Notify
+Response
+A demand for accuracy on the impact of handling data on the users’ personal lives
+Defines what would require and exempt user consent for publication of data
+Anonymizes data
+Impact on the lives of users
+Reason for publication
+Opt-out options
+States specific purpose
+No personal/sensitive 
+
+2. Trend - .5% of all data is analyzed, getting smaller as data grows
+Big data saves money and increases efficiency
+Changing landscape
+Increase investments in modern data warehouse technologies
+utilize operational data and big data analytics
+includes real time analytics
+
+3. Many Variables
+a. Criticality of data [l-severity]
+b. How easily data can be identified [not emphasized]
+c. How breach occurred [no index/included in quantification]
+d. Industry specific metrics
+
+severity increase is positive relationship with breaking k-anonymity
+
+who: organizations, users
+what: data breach
+when: leaked data
+where: can be in multiple places, linked data
+why: see above
+how: quantification
+
+Experiment - implement in application layer, provide multiple sources
+
+http://www.businessinsider.com/mind-blowing-growth-and-power-of-big-data-2015-6

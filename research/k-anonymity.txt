@@ -37,10 +37,6 @@ obtaining severity index of sensitive attributes will vary
 Severity based on linkages
 
 
-Quasi identifiers should be quantified as well
-
-
-
 
 5 reasons why severity quantification is important
 
@@ -73,6 +69,10 @@ b. How easily data can be identified [not emphasized]
 c. How breach occurred [no index/included in quantification]
 d. Industry specific metrics
 
+breach of confidential saw 5% in stock price
+suffering a non confidential breach had no effect
+Lost about 2.1% of their market value within 2 days≥
+
 severity increase is positive relationship with breaking k-anonymity
 
 who: organizations, users
@@ -82,6 +82,77 @@ where: can be in multiple places, linked data
 why: see above
 how: quantification
 
+Different types of attacks or severity of attacks
+
 Experiment - implement in application layer, provide multiple sources
 
 http://www.businessinsider.com/mind-blowing-growth-and-power-of-big-data-2015-6
+
+
+
+Definitions:
+
+data - person specific data organized within a table
+tuple - row or record within the table. Tuples may or may not be unique
+columns - aliased with attribute, will contain values. Attributes can have their own domain.
+inference - derive knowledge from other information
+disclosure - intentional or non-intentional release of personal information
+anonymized/generalized/disclosure control - identify and reduce risk of unintended disclosure
+quasi-identifier - an attribute that can be used in combination with other attributes to uniquely identify an individual.
+
+
+
+
+
+
+k-anonymity - each sequence of quasi identifier values occurs k number of times. 
+
+Who:Sweeney et al.
+What: Anonymized data
+When: Releasing data
+Where:
+Public information
+Why: Need for privacy protection
+
+Unique based on small set, 5 digit zip, gender, date of birth
+health and other public information is in this common form
+Re-identification -information can be reused and linked to other data
+
+Background - Not new concept
+Statistical Databases - Commonly released in federal and state statistics. Data is often personal and is used for analysis such as data mining and fraud detection. Some techniques to anonymize this data involves adding noise. However, adding noise can make the data unreliable. 
+Multi-level databases Multi-level databases MDB have data stored in different classifications. Higher classified information should not be derived from lower classified data. Although database design can help resolve these issues, there are other obstacles that remain. For example, data is often replicated and distributed amongst many sources. The data is then released on that party’s discretion. One technique is the suppress all sensitive data, but this can reduce the data quality or leave the data unusable. 
+
+Security vs Privacy - Security can protect against a direct breach, but not from information that can be inferred.
+
+Multiple queries - individual queries can leak insensitive data, but when used together can infer sensitive information. 
+
+
+Problems:
+
+matching attack
+1. Unsorted matching attack - Positions of the tuples in each table correspond to those in the private table
+GT1 is released, GT2 is released, both must be randomly sorted
+
+2. Complementary Released Table - Use 2 generalized tables to form a linked table, which together form a primary/unique key. Can be addressed by reassessing quasi-identifiers for new generalized table, or no value more specific that the original table should be released. For example, a zip code of 0213* vs 02139. 
+
+3. Temporal attack - Adding more data t PT. New generalized table called GTti. Linking can reveal unique rows in the private table. One way to avoid this is to base solutions on adding new records to the original released table. 
+
+
+
+How:Cannot distinguish from at least k-1 subjects
+
+
+weigh quasi identifier attributes
+weigh the influence of the DF
+
+1. Weight the impact of privacy
+[1+x]/# of quasi
+/k (assume constant k)
+[(1+x)/k] + severity
+
+privacy more than just a constant
+can be weighted
+impact
+
+2. Determine if row abides to k-anonymity
+3. Future research

@@ -1,0 +1,209 @@
+using System;
+using System.Numerics;
+
+/*
+Program to perform RSA encryption/decryption
+
+Limitations:
+https://crypto.stackexchange.com/questions/13267/encryption-of-a-number-with-rsa-bigger-than-n
+https://math.stackexchange.com/questions/34469/rsa-encrypting-values-bigger-than-the-module
+
+When value is > modulo (n) --- known limitations exist
+
+*/
+
+public class Program
+{
+	public static void Main()
+	{
+
+		/*
+		 * Select prime numbers
+		 */
+		var p = 17;
+		var q = 41;
+		
+		
+		//get n
+		var n = getN(p, q);
+		
+		//Console.WriteLine(n);
+		
+		//get m
+		var m = getM(p, q);
+		
+		//Console.WriteLine(m);
+		
+		//get primes
+		var primes = primeSieve(m);
+		
+		//get encryption key
+		var e = getEncryptionKey(primes, m);
+		
+		//Console.WriteLine(e);
+
+		//get decryption key
+		var d = getDecryptionKey(1, m, e);
+		
+		//Console.WriteLine(d);
+		
+		/******ENCRYPTION VALUE*********/
+		var encryptValue = 500;
+		
+		Console.WriteLine("Value: " + encryptValue);
+		
+		//e and n is public key
+		var c = encrypt(encryptValue, e, n);
+		
+		Console.WriteLine("Encrypted Value: " + c);
+		
+		//d and n is private ekey
+		var plainValue = decrypt(c, d, n);
+		
+		Console.WriteLine("Decrypted Value: " + plainValue);
+	}
+	
+	//derypt
+	static public BigInteger decrypt (BigInteger cipher, int d, int n) {
+		
+		///cipher value ^ d mod n
+		return BigInteger.ModPow(cipher,d,n);
+		
+	}
+	
+	//encrypt
+	static public BigInteger encrypt(BigInteger plain, int e, int n) {
+		
+		//plain value^e % n
+		return BigInteger.ModPow(plain, e, n);
+	}
+	
+	//return m
+	static public int getM(int p, int q) {
+		//get new P
+		var newP = p - 1;
+			
+		//get new Q
+		var newQ = q - 1;
+		
+		//return (p-q)(q-1)
+		return newP * newQ;
+	}
+	
+	//return n
+	static public int getN(int p, int q){
+		//pq
+		return p * q;
+	}
+	
+	//returns decryption key
+	static public int getDecryptionKey(int start, int n, int encryptionKey){
+		
+		//get mod
+		var mod = (start * n + 1) % encryptionKey;
+		
+		//if mode is zero
+		if (mod == 0){
+			//return quotient
+			return (start * n + 1) / encryptionKey;
+		}
+		
+		
+		//return get decryption key
+		return getDecryptionKey(start + 1, n, encryptionKey);
+	
+	}
+	
+	//returns encryption key
+	static public int getEncryptionKey(bool[] primes, int n) {
+		Console.WriteLine(n);
+		//iterate through indicies
+		for(var i = 0; i < primes.Length; i++){
+			
+			//get value
+			var isPrime = primes[i];
+			
+			//if number is prime
+			if(isPrime){
+				
+				//get common denominator
+				var divisor = gcd(i, n);
+				
+				//if divisor is 1
+				if(divisor == 1 && (i > 1 && i < n)){
+					
+					//return i
+					return i;
+				}
+			}
+		}
+		
+		//by default return null
+		return -1;
+	}
+	
+	//returns greatest common divisor
+	static public int gcd(int leftNum, int rightNum){
+		
+		//if right number is zero
+		if (rightNum == 0){
+			
+			//return left number
+			return leftNum;
+			
+		}
+		//otherwise
+		else{
+			
+			//get mode of left number, right number
+			var mod = leftNum % rightNum;
+			
+			//GCD of right number and mod
+			return gcd(rightNum, mod);
+			
+		}
+	}
+	
+	//returns all prime indicies
+	static public bool[] primeSieve(int length) {
+		//get array size
+		var setSize = length + 1;
+		
+		//declare array
+		var arr = new bool[length];
+		
+		//iterate through array starting at index 2
+		for(var i = 2; i < arr.Length; i++){
+			
+			//set value to true
+			arr[i] = true;
+		}
+		
+		//get square root
+		var sqRoot = Math.Sqrt(length);
+		
+		//iterate (i) from 2 to square root of length
+		for (var i = 2; i < sqRoot; i++){
+			
+			//get current value
+			var isPrime = arr[i];
+			
+			//if prime is set to true
+			if (isPrime) {
+				
+				//get i squared
+				var squared = i * i;
+				
+				//iterate from (j) i squared to length, increment j by i
+				for(var j = squared; j < length; j += i) {
+					
+					//set value to false of index j in arr
+					arr[j] = false;
+				}
+			}
+		}
+		
+		//return array
+		return arr;	
+	}
+}

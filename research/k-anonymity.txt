@@ -156,3 +156,15 @@ impact
 
 2. Determine if row abides to k-anonymity
 3. Future research
+
+
+
+
+
+
+
+
+Background knowledge doe snot lead to a privacy breach
+
+Strong background knowledge
+

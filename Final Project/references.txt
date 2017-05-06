@@ -1,0 +1,9 @@
+Machanavajjhala, Ashwin, et al. "l-diversity: Privacy beyond k-anonymity." ACM Transactions on Knowledge Discovery from Data (TKDD) 1.1 (2007): 3.
+
+Vavilis, Sokratis, Milan Petković, and Nicola Zannone. "A severity-based quantification of data leakages in database systems." Journal of Computer Security 24.3 (2016): 321-345.
+
+Sweeney, Latanya. "k-anonymity: A model for protecting privacy." International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 10.05 (2002): 557-570.
+
+Vavilis, Sokratis, Milan Petković, and Nicola Zannone. "Data leakage quantification." IFIP Annual Conference on Data and Applications Security and Privacy. Springer Berlin Heidelberg, 2014.
+
+Goel, Sanjay, Christopher Brown, and Hany Shawky. "Measuring the impact of security breaches on stock valuations of firms." Information & Management 46.7 (2009): 404-410.

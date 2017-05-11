@@ -1,0 +1,34 @@
+Data leakage is the loss of data that may result in the damaging of a company’s reputation and productivity.
+
+There are many threats that exist that may result in the unauthorized release of information. The release of information may be intentional or unintentional. 
+
+For example, medical and government information is commonly released in generalized versions. The data publisher may not be aware of other data sets that can be used to perform linkage attacks. 
+
+Measuring the severity based on privacy and frequency of attributes can help prevent a leakage from occuring. 
+ 
+
+1. We propose scoring all data classification
+2. Non-sensitive values should have a constant severity score to reflect newly added data
+3. Including the measurement of distinct sensitive values per q-block and a weight to determine whether a q-block has well-represented sensitive values
+
+We determined that K-Anonymity will not have a strong impact on the severity of a record. However, how diverse and well-represented a set of sensitive attributes is can increase the accuracy of the severity for a given record. 
+————————————————————————————————————
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

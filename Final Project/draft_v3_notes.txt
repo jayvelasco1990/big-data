@@ -6,9 +6,9 @@ For example, medical and government information is commonly released in generali
 
 Measuring the severity based on privacy and frequency of attributes can help prevent a leakage from occuring. 
  
+We propose KL-Severity to address the scoring of all data classification, incorporating the diversity and distribution of sensitive attributes and an analysis on the effect of different privacy metrics on L-Severity.
 
-1. We propose scoring all data classification
-2. Non-sensitive values should have a constant severity score to reflect newly added data
+
 3. Including the measurement of distinct sensitive values per q-block and a weight to determine whether a q-block has well-represented sensitive values
 
 We determined that K-Anonymity will not have a strong impact on the severity of a record. However, how diverse and well-represented a set of sensitive attributes is can increase the accuracy of the severity for a given record. 
